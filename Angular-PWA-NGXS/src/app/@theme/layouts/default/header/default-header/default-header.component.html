@@ -1,0 +1,81 @@
+<!-- Header -->
+<header class="header1">
+  <!-- Header desktop -->
+  <div class="container-menu-header">
+
+    <div class="wrap_header">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="../../../../../../assets/images/icons/assorted_logo.png" alt="IMG-LOGO" />
+      </a>
+
+      <!-- Menu -->
+      <div class="wrap_menu">
+        <nav class="menu">
+          <ul class="main_menu">
+            <li *ngFor="let menu of menuCfg">
+              <a [routerLink]="[menu.path]" [routerLinkActive]="[menu.activeClass]"
+                [routerLinkActiveOptions]="{exact: menu.activeLinkOption.exact}">{{menu.label}}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Header Icon -->
+      <div class="header-icons">
+        <div class="header-wrapicon2">
+          <img (click)="toggleCart()" src="../../../../../../assets/images/icons/icon-header-02.png"
+            class="header-icon1 js-show-header-dropdown" alt="ICON">
+          <span class="header-icons-noti">100</span>
+
+          <app-header-cart [cartContClass]="cartContClass"></app-header-cart>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Mobile -->
+  <div class="wrap_header_mobile">
+    <!-- Logo moblie -->
+    <a href="/" class="logo-mobile">
+      <img src="../../../../../../assets/images/icons/logo.png" alt="IMG-LOGO">
+    </a>
+
+    <!-- Button show menu -->
+    <div class="btn-show-menu">
+      <!-- Header Icon mobile -->
+      <div class="header-icons-mobile">
+
+        <div class="header-wrapicon2">
+          <img (click)="toggleCart()" src="../../../../../../assets/images/icons/icon-header-02.png"
+            class="header-icon1 js-show-header-dropdown" alt="ICON">
+          <span class="header-icons-noti">0</span>
+
+          <app-header-cart [cartContClass]="cartContClass"></app-header-cart>
+
+        </div>
+      </div>
+
+      <div class="btn-show-menu-mobile hamburger hamburger--squeeze" (click)="toggleHamburgerMenu()"
+        [ngClass]="{'is-active': isHamburgerActive}">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div class="wrap-side-menu" [ngStyle]="{'display': (isHamburgerActive ? 'block': 'none')}">
+    <nav class="side-menu">
+      <ul class="main-menu">
+
+        <li class="item-menu-mobile" *ngFor="let menu of menuCfg">
+          <a [routerLink]="[menu.path]">{{menu.label}}</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</header>

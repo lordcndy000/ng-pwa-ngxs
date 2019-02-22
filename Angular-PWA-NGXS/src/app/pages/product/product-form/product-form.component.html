@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{title}}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <select class="form-control" title="Category">
+        <option>Dress</option>
+        <option>Jacket</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Brand</label>
+      <input type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea class="form-control" row="9"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Price</label>
+      <input type="number" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Thumbnail</label>
+      <p>MyThumbnail.jpg</p>
+      <div class="upload-drop-zone" id="drop-zone">
+        Just drag and drop files here
+      </div>
+    </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+  <button type="button" class="btn btn-default btn-save">{{saveBtnLabel}}</button>
+</div>

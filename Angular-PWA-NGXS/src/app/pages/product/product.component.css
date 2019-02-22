@@ -1,0 +1,19 @@
+.btn-add-product {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #e65540;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 4px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    cursor: pointer;
+}
+
+.btn-add-product:hover {
+    background-color: black;
+}

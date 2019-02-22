@@ -1,0 +1,43 @@
+<!-- Header cart noti -->
+<div [ngClass]="cartContClass">
+
+  <ul class="header-cart-wrapitem">
+
+    <li class="header-cart-item">
+      <div class="header-cart-item-img">
+        <img src="image.jpg" alt="IMG">
+      </div>
+
+      <div class="header-cart-item-txt">
+        <a href="#" class="header-cart-item-name">
+          My Product
+        </a>
+
+        <span class="header-cart-item-info">
+         1 x $ 1.00
+        </span>
+      </div>
+    </li>
+
+  </ul>
+
+  <div class="header-cart-total">
+    Total: $ 1.00
+  </div>
+
+  <div class="header-cart-buttons">
+    <div class="header-cart-wrapbtn">
+      <!-- Button -->
+      <a [routerLink]="[menuPages.cart.path]" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+        {{menuPages.cart.label}}
+      </a>
+    </div>
+
+    <div class="header-cart-wrapbtn">
+      <!-- Button -->
+      <a [routerLink]="[menuPages.checkOut.path]" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+        {{menuPages.checkOut.label}}
+      </a>
+    </div>
+  </div>
+</div>
