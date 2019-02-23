@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Product } from '@core/model/product/productRequestDTO';
+import { environment } from '@env/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() {
+  private apiUrl = environment.apiResources.main.apiUrl;
 
+  constructor(private http: HttpClient) {
+
+  }
+
+  create(model: Product) {
+    const productData = this.transformFormData(model);
+
+    return this.http.post(`${this.apiUrl}/products`, productData);
   }
 
   private transformFormData(product: Product): FormData {

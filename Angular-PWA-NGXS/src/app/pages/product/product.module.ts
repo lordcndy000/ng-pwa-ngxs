@@ -10,12 +10,15 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductListInfoComponent } from './product-list-info/product-list-info.component';
 import { ProductComponent } from './product.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const MODULES = [
   CommonModule,
   HttpClientModule,
   ProductRoutingModule,
   IgxSliderModule,
+  FormsModule,
+  ReactiveFormsModule,
   ModalModule.forRoot(),
 ];
 

@@ -5,46 +5,46 @@
   </button>
 </div>
 <div class="modal-body">
-  <form>
+  <form [formGroup]="productForm">
     <div class="form-group">
       <label>Name</label>
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" formControlName="name" />
     </div>
 
     <div class="form-group">
       <label>Category</label>
-      <select class="form-control" title="Category">
-        <option>Dress</option>
-        <option>Jacket</option>
+      <select class="form-control" title="Category" formControlName="categoryId">
+        <option *ngFor="let category of categories$ | async;trackByFn" [value]="category.id">{{category.name}}</option>
       </select>
     </div>
 
     <div class="form-group">
       <label>Brand</label>
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" formControlName="brand"/>
     </div>
 
     <div class="form-group">
       <label>Description</label>
-      <textarea class="form-control" row="9"></textarea>
+      <textarea class="form-control" row="9" formControlName="description"></textarea>
     </div>
 
     <div class="form-group">
       <label>Price</label>
-      <input type="number" class="form-control" />
+      <input type="number" class="form-control" formControlName="price" />
     </div>
 
     <div class="form-group">
       <label>Thumbnail</label>
-      <p>MyThumbnail.jpg</p>
-      <div class="upload-drop-zone" id="drop-zone">
+      <p> {{filePath}} </p>
+      <div class="upload-drop-zone" id="drop-zone" (click)="productImageUpload.click()">
         Just drag and drop files here
       </div>
+      <input #productImageUpload type="file" class="d-none"  (change)="onFileChange($event)">
     </div>
 
   </form>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
-  <button type="button" class="btn btn-default btn-save">{{saveBtnLabel}}</button>
+  <button type="button" class="btn btn-default btn-save" (click)="saveProduct()">{{saveBtnLabel}}</button>
 </div>
